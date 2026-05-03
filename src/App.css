@@ -1,0 +1,90 @@
+/* App.css */
+
+/* Reset básico e tipografia */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f3f4f6; /* Gray-100 */
+  color: #111827; /* Gray-900 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+/* Layout Principal */
+main {
+  max-width: 72rem; /* 6xl - 1152px */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* space-y-8 */
+}
+
+/* Responsividade para o padding do main */
+@media (min-width: 768px) {
+  main {
+    padding: 2rem;
+  }
+}
+
+/* Estilização das Sections (Cards) */
+section {
+  background-color: #ffffff;
+  border-radius: 0.75rem; /* rounded-xl */
+  border: 1px solid #e5e7eb; /* border-gray-200 */
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
+}
+
+.section-padding {
+  padding: 1.5rem; /* p-6 */
+}
+
+/* Títulos das Seções */
+h2 {
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 600; /* font-semibold */
+  color: #374151; /* gray-700 */
+  margin: 0;
+}
+
+/* Cabeçalho Interno da Tabela */
+.table-header-row {
+  padding: 1.5rem;
+  border-bottom: 1px solid #f3f4f6; /* border-gray-100 */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Badge de Contador (X itens) */
+.badge {
+  font-size: 0.875rem;
+  background-color: #dbeafe; /* blue-100 */
+  color: #1d4ed8; /* blue-700 */
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px; /* rounded-full */
+  font-weight: 500;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  color: #9ca3af; /* gray-400 */
+  font-size: 0.875rem;
+}
+
+/* Utilitários Extras */
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}

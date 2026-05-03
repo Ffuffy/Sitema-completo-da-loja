@@ -1,0 +1,97 @@
+/* SalesForm.css */
+
+/* Estrutura do Grid do Formulário */
+form {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr; /* Mobile first */
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+}
+
+/* Responsividade: Tablet */
+@media (min-width: 768px) {
+  form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Responsividade: Desktop */
+@media (min-width: 1024px) {
+  form {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Containers de cada campo */
+.flex.flex-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+/* Labels */
+label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #4b5563; /* Gray-600 */
+}
+
+/* Inputs e Selects */
+input, 
+select {
+  padding: 0.5rem;
+  border: 1px solid #d1d5db; /* Gray-300 */
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+  background-color: #fff;
+}
+
+/* Efeito de Foco nos Inputs */
+input:focus, 
+select:focus {
+  border-color: #3b82f6; /* Blue-500 */
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+}
+
+/* Container do Botão (Alinhamento) */
+.flex.items-end {
+  display: flex;
+  align-items: flex-end;
+}
+
+/* Botão de Submissão */
+button[type="submit"] {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #2563eb; /* Blue-600 */
+  color: #ffffff;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  height: 42px; /* Garante alinhamento visual com os inputs */
+}
+
+button[type="submit"]:hover {
+  background-color: #1d4ed8; /* Blue-700 */
+}
+
+button[type="submit"]:active {
+  background-color: #1e40af; /* Blue-800 */
+  transform: translateY(1px);
+}
+
+/* Estilo para o ícone (Lucide React injeta um SVG) */
+button svg {
+  flex-shrink: 0;
+}

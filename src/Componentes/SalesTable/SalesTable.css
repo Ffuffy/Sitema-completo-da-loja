@@ -1,0 +1,132 @@
+/* Container principal */
+.table-container {
+  width: 100%;
+  background: #ffffff;
+}
+
+.sales-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* --- MOBILE: Transformando tabela em Cards --- */
+@media (max-width: 768px) {
+  /* Esconde o cabeçalho original da tabela */
+  .sales-table thead {
+    display: none;
+  }
+
+  /* Faz cada linha virar um card */
+  .sales-table tbody tr {
+    display: block;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    padding: 12px;
+;
+  }
+
+  /* Faz cada célula se comportar como uma linha de dados */
+  .sales-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 4px;
+    border-bottom: 1px solid #f1f5f9;
+    text-align: right;
+  }
+
+  .sales-table td:last-child {
+    border-bottom: none;
+  }
+
+  /* Adiciona o rótulo antes do valor (ex: Produto: Coca-Cola) */
+  .sales-table td::before {
+    content: attr(data-label); /* Requer ajuste no JS, veja abaixo */
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    color: #64748b;
+    float: left;
+  }
+
+  /* Ajuste do rodapé no mobile */
+  .table-footer tr {
+    display: block;
+    border: none;
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 16px;
+  }
+  
+  .footer-label {
+    display: block;
+    text-align: center !important;
+    margin-bottom: 8px;
+  }
+  
+  .footer-value {
+    display: block;
+    text-align: center !important;
+    font-size: 1.5rem;
+  }
+}
+
+/* --- DESKTOP: Estilo original refinado --- */
+@media (min-width: 769px) {
+  .sales-table thead tr {
+    background-color: #f8fafc;
+    border-bottom: 2px solid #e2e8f0;
+  }
+
+  .sales-table th {
+    padding: 16px 24px;
+    color: #475569;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .sales-table td {
+    padding: 16px 24px;
+    border-bottom: 1px solid #f1f5f9;
+  }
+}
+
+/* --- ESTILOS GERAIS DE UI --- */
+.font-medium { font-weight: 600; color: #1e293b; }
+.text-total { font-weight: 800; color: #059669; font-size: 1rem; }
+
+.badge-category {
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.badge-category.bebidas { background: #e0f2fe; color: #0369a1; }
+.badge-category.comidas { background: #ffedd5; color: #9a3412; }
+.badge-category.fumos { background: #f3e8ff; color: #6b21a8; }
+.badge-category.outros { background: #f1f5f9; color: #475569; }
+
+.btn-delete {
+  background: #fee2e2;
+  color: #dc2626;
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-delete:hover {
+  background: #fecaca;
+  transform: scale(1.1);
+}
+
+.footer-value {
+  color: #059669;
+  font-size: 1.25rem;
+}
